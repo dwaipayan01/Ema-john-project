@@ -13,7 +13,7 @@ const Header = () => {
                     <a href="/shop">Shop</a>
                     <a href="/orders">orders</a>
                     <a href="/inventory">Inventory</a>
-                    <a href="about">About</a>
+                    <a href="/about">About</a>
                 </div>
 
             </div>
