@@ -3,16 +3,14 @@ import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import { addToDb, getStoredCart } from '../../utilities/fakedb'
 import "./Shop.css";
+import useProduct from '../../hooks/useProduct';
+import { AiOutlineArrowRight } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 
 const Shop = () => {
-    const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
-    useEffect(() => {
-        fetch("products.json")
-            .then(res => res.json())
-            .then(data => setProducts(data));
-    }, [])
+    const [products, setProducts] = useProduct();
     useEffect(() => {
         const storedCart = getStoredCart();
         const saveCart = [];
@@ -51,7 +49,7 @@ const Shop = () => {
                 }
             </div>
             <div className='order-container'>
-                <Cart cart={cart}></Cart>
+                <Cart cart={cart}><Link to="/orders"><button className='clear-button' style={{ background: "#FF9900" }}>Review orders <AiOutlineArrowRight /></button> </Link></Cart>
 
             </div>
         </div>

@@ -1,7 +1,10 @@
 import React from 'react';
 import "./Cart.css";
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import { AiFillDelete } from 'react-icons/ai';
 
-const Cart = ({ cart }) => {
+const Cart = (props) => {
+    const { cart } = props
     let total = 0;
     let Shipping = 0;
     let quantity = 0;
@@ -20,7 +23,10 @@ const Cart = ({ cart }) => {
             <p>Total Shipping :${Shipping}</p>
             <p>Tax :{tax}</p>
             <h5>Grand Total :{grandTotal.toFixed(2)}</h5>
+            <button className='clear-button'>Clear cart <AiFillDelete /></button>
+            {props.children}
         </div>
+
     );
 };
 
