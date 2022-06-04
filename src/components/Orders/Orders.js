@@ -25,7 +25,7 @@ const Orders = () => {
                 }
             </div>
             <div className='order-container'>
-                <Cart cart={cart}><Link to="/checkout"><button className='clear-button' style={{ background: "#FF9900" }}>Proceed checkout <BsReverseLayoutTextSidebarReverse /></button> </Link></Cart>
+                <Cart cart={cart}><Link to="/checkout"><button className='clear-button' style={{ background: "#FF9900" }}>Proceed shippment <BsReverseLayoutTextSidebarReverse /></button> </Link></Cart>
 
             </div>
         </div>
