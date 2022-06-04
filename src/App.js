@@ -5,8 +5,12 @@ import About from './components/About/About';
 import Checkout from './components/Checkout/Checkout';
 import Header from './components/Header/Header';
 import Inventory from './components/Inventory/Inventory';
+import Login from './components/Login/Login';
+import Notfound from './components/Notfound/Notfound';
 import Orders from './components/Orders/Orders';
+import RequiredAuth from './components/RequiredAuth/RequiredAuth';
 import Shop from './components/Shop/Shop';
+import SignUp from './components/SignUp/SignUp';
 
 
 function App() {
@@ -19,7 +23,12 @@ function App() {
         <Route path="/orders" element={<Orders></Orders>}></Route>
         <Route path="/inventory" element={<Inventory></Inventory>}></Route>
         <Route path="/about" element={<About></About>}></Route>
-        <Route path="/checkout" element={<Checkout></Checkout>}> </Route>
+        <Route path="/checkout" element={<RequiredAuth>
+          <Checkout></Checkout>
+        </RequiredAuth>}> </Route>
+        <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/signup" element={<SignUp></SignUp>}></Route>
+        <Route path="*" element={<Notfound></Notfound>}></Route>
       </Routes>
     </div>
   );
